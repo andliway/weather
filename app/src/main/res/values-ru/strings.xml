@@ -8,11 +8,13 @@
     <string name="temperature">Температура</string>
     <string name="celsius">Цельсий</string>
     <string name="fahrenheit">Фаренгейт</string>
-    <string name="enter_location">Введите местоположение</string>
     <string name="mm">мм</string>
     <string name="mbar">мбар</string>
     <string name="m_s">м/с</string>
     <string name="km_h">км/ч</string>
     <string name="landscape">ландшафтный</string>
     <string name="increase_counter">increase_counter</string>
+    <string name="add_sity">Добавить город</string>
+    <string name="search">поиск</string>
+    <string name="enter_the_location">Введите местоположение</string>
 </resources>
