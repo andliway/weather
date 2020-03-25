@@ -71,6 +71,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/date"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,10 +156,10 @@
         android:id="@+id/increaseCounterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="408dp"
         android:text="@string/increase_counter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintStart_toEndOf="@+id/textViewCount"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -166,13 +167,26 @@
         android:id="@+id/textViewCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="416dp"
+        android:layout_marginLeft="188dp"
+        android:layout_marginTop="412dp"
         android:text="0"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_add_sity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#304FFE"
+        android:text="@string/add_sity"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

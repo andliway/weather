@@ -3,6 +3,7 @@ package com.andmate.weather;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private final String counterDataKey = "counterDataKey";
     private Button button;
     private TextView textViewC;
+    private Button addSity;
+    private TextView textViewSity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         setOnSwitchChangedThree();
         setDateOnApp();
         String instanceState;
+        setOnStartSecondActivityBtnClick();
+        setTextFromFirstActivity();
+
         if (savedInstanceState == null) {
             instanceState = "Первый запуск!";
         } else {
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
         initIncreaseBtnBehavior();
     }
+
     private void initViews() {
         textView = findViewById(R.id.textView6);
         textViewTwo = findViewById(R.id.textView7);
@@ -52,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         textViewDate = findViewById(R.id.textView5);
         button = findViewById(R.id.increaseCounterBtn);
         textViewC = findViewById(R.id.textViewCount);
+        addSity = findViewById(R.id.button_add_sity);
+        textViewSity = findViewById(R.id.textView1);
 
         int orientation = getResources().getConfiguration().orientation;
         if (orientation != Configuration.ORIENTATION_LANDSCAPE) {
@@ -60,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
             thirdSwitch = findViewById(R.id.switch3);
         }
     }
+
+    private void setOnStartSecondActivityBtnClick() {
+        addSity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setTextFromFirstActivity() {
+        String text = getIntent().getStringExtra(SecondActivity.TEXT_DATA_KEY);
+        textViewSity.setText(text);
+    }
+
     private void initIncreaseBtnBehavior() {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -125,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
     }
+
 
     private void setDateOnApp() {
         Calendar calendar = Calendar.getInstance();
