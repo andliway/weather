@@ -6,5 +6,8 @@
     <string name="mbar" />
     <string name="m_s">m/s</string>
     <string name="landscape">landscape</string>
+    <string name="add_sity">Add sity</string>
+    <string name="search">search</string>
+    <string name="enter_the_location">Enter the location</string>
 
 </resources>
